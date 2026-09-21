@@ -3,12 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding Of Asih & Fahril</title>
 
-<title>Wedding Invitation | Asih & Fahril</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--gold:#C9A227;
+--gold-dark:#A67C00;
+--white:#ffffff;
+--soft:#fafafa;
+--text:#2d2d2d;
+}
 
 *{
 margin:0;
@@ -21,10 +28,20 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#f8f3eb;
-color:#333;
+font-family:'Montserrat',sans-serif;
+background:#fff;
+color:var(--text);
 overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+text-align:center;
 }
 
 h1,h2,h3{
@@ -36,240 +53,236 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-height:100vh;
-background:linear-gradient(135deg,#d4af37,#f8f3eb);
+height:100%;
+background:white;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 z-index:9999;
-padding:20px;
+transition:1s;
 }
 
-.cover-content{
-background:rgba(255,255,255,.85);
-padding:40px;
-border-radius:25px;
-max-width:500px;
-width:100%;
+.cover-card{
+width:90%;
+max-width:420px;
+border:2px solid var(--gold);
+padding:40px 25px;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.logo{
+width:140px;
+margin-bottom:20px;
 }
 
 .cover h1{
-font-size:3rem;
+font-size:50px;
+color:var(--gold);
 }
 
 .cover p{
-margin:10px 0;
+margin-top:10px;
+line-height:1.7;
 }
 
 .btn{
-display:inline-block;
-padding:14px 30px;
-background:#b8860b;
-color:#fff;
+margin-top:25px;
+padding:14px 28px;
 border:none;
+background:var(--gold);
+color:white;
 border-radius:50px;
 cursor:pointer;
-text-decoration:none;
-margin-top:20px;
-font-size:16px;
+font-size:15px;
 }
 
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600');
-background-size:cover;
-background-position:center;
-color:white;
-padding:20px;
+background:linear-gradient(to bottom,#fff,#faf8f0);
 }
 
 .hero h1{
-font-size:4rem;
+font-size:70px;
+color:var(--gold);
 }
 
-.hero h2{
-font-size:2rem;
-font-weight:300;
-}
-
-.section{
-padding:80px 20px;
-text-align:center;
-max-width:900px;
-margin:auto;
-}
-
-.title{
-font-size:3rem;
-margin-bottom:20px;
-color:#b8860b;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-margin-top:20px;
-}
-
-.nama{
-font-size:2.5rem;
-margin-bottom:10px;
+.hero p{
+margin-top:15px;
 }
 
 .countdown{
 display:flex;
-justify-content:center;
 gap:15px;
-flex-wrap:wrap;
 margin-top:30px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .box{
-width:90px;
-padding:15px;
-background:#b8860b;
-border-radius:15px;
-color:white;
+width:80px;
+height:80px;
+border:1px solid var(--gold);
+border-radius:12px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.box span{
-display:block;
-font-size:2rem;
+.box span:first-child{
+font-size:26px;
 font-weight:bold;
+color:var(--gold);
 }
 
-.map-btn{
+.card{
+max-width:700px;
+width:100%;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.names{
+font-size:42px;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.location-btn{
 display:inline-block;
 margin-top:20px;
-padding:14px 25px;
-background:#b8860b;
+padding:15px 30px;
+background:var(--gold);
 color:white;
-border-radius:50px;
 text-decoration:none;
-}
-
-.qr{
-margin-top:30px;
+border-radius:50px;
 }
 
 footer{
-padding:40px;
+padding:60px 20px;
 text-align:center;
-background:#eee;
+background:#faf8f0;
 }
 
-.flower{
+.petals{
 position:fixed;
-top:-10px;
-font-size:20px;
-animation:fall linear infinite;
-z-index:1;
+top:0;
+left:0;
+width:100%;
+height:100%;
 pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+.petal{
+position:absolute;
+color:#d8b85b;
+font-size:18px;
+animation:fall linear infinite;
 }
 
 @keyframes fall{
-to{
-transform:translateY(110vh) rotate(360deg);
+0%{
+transform:translateY(-100px) rotate(0);
+}
+100%{
+transform:translateY(120vh) rotate(360deg);
 }
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:2.8rem;
+font-size:48px;
 }
 
-.title{
-font-size:2.2rem;
-}
-
-.nama{
-font-size:2rem;
+.names{
+font-size:34px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
+
+<div class="petals" id="petals"></div>
 
 <div class="cover" id="cover">
 
-<div class="cover-content">
+<div class="cover-card">
 
-<h3>The Wedding Of</h3>
+<img src="Logo A.png" class="logo">
 
-<h1>Asih & Fahril</h1>
-
-<p>14 November 2026</p>
-
-<br>
+<h1>A & F</h1>
 
 <p>Kepada Yth.</p>
 
 <h3 id="guestName">Bapak/Ibu/Saudara/i</h3>
 
+<p>Mohon maaf apabila ada kesalahan penulisan nama dan gelar</p>
+
 <button class="btn" onclick="openInvitation()">
-💌 Buka Undangan
+Buka Undangan
 </button>
 
 </div>
+
 </div>
 
 <audio id="music" loop>
-<source src="music/piano-wedding.mp3" type="audio/mpeg">
+<source src="leberch-wedding-piano-595793.mp3" type="audio/mpeg">
 </audio>
 
 <section class="hero">
 
-<div>
-
-<h2>Undangan Pernikahan</h2>
+<img src="Logo A.png" width="180">
 
 <h1>Asih & Fahril</h1>
 
-<p>14 November 2026</p>
+<p>Sabtu, 14 November 2026</p>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">0</span>
+<span>Hari</span>
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+<span>Jam</span>
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+<span>Menit</span>
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+<span>Detik</span>
+</div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section>
 
-<h2 class="title">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
-
-<p>
-Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri agar kamu merasa tenteram di sampingnya.
-</p>
-
-<br>
-
-<b>QS. Ar-Rum : 21</b>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Mempelai</h2>
+<h2 class="names">Mempelai</h2>
 
 <div class="card">
 
-<div class="nama">Siti Asih</div>
+<h3>Siti Asih</h3>
 
-<p>Putri Bungsu dari</p>
-
-<p><b>Bapak Karnawi (Awi)</b></p>
-<p><b>Ibu Ramdah</b></p>
+<p>
+Putri Bungsu dari<br>
+Bapak Karnawi (Awi)<br>
+Ibu Ramdah
+</p>
 
 <br><br>
 
@@ -277,129 +290,63 @@ Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan h
 
 <br><br>
 
-<div class="nama">Fahril</div>
+<h3>Fahril</h3>
 
-<p>Putra Bungsu dari</p>
-
-<p><b>Bapak H. Udin Kantin (Alm)</b></p>
-<p><b>Ibu Nuryanih</b></p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Save The Date</h2>
-
-<div class="countdown">
-
-<div class="box">
-<span id="days">0</span>
-Hari
-</div>
-
-<div class="box">
-<span id="hours">0</span>
-Jam
-</div>
-
-<div class="box">
-<span id="minutes">0</span>
-Menit
-</div>
-
-<div class="box">
-<span id="seconds">0</span>
-Detik
-</div>
+<p>
+Putra Bungsu dari<br>
+Bapak H. Udin Kantin (Alm)<br>
+Ibu Nuryanih
+</p>
 
 </div>
 
 </section>
 
-<section class="section">
+<section>
 
-<h2 class="title">Detail Acara</h2>
+<h2 class="names">Acara Pernikahan</h2>
 
 <div class="card">
 
 <h3>Akad Nikah</h3>
-
-<p>Sabtu, 14 November 2026</p>
-
 <p>10.00 WIB - Selesai</p>
 
-<br><hr><br>
+<br>
 
 <h3>Resepsi</h3>
-
-<p>Sabtu, 14 November 2026</p>
-
 <p>09.00 WIB</p>
 
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Lokasi Acara</h2>
-
-<div class="card">
-
-<p>Kediaman Mempelai Wanita</p>
-
 <br>
 
 <p>
+Kediaman Mempelai Wanita<br>
 Kp. Pisangan Pangsor RT 02/03<br>
-Desa Sangiang<br>
-Kec. Sepatan Timur<br>
-Kab. Tangerang
+Ds. Sangiang<br>
+Kec. Sepatan Timur - Tangerang
 </p>
 
-<a class="map-btn"
+<a class="location-btn"
 href="https://maps.app.goo.gl/n9aQ3E3HSSGz3oMX7"
 target="_blank">
-
-📍 Buka Google Maps
-
+Lihat Lokasi
 </a>
 
-<div class="qr">
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://maps.app.goo.gl/n9aQ3E3HSSGz3oMX7"
-width="250">
-
 </div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Ucapan</h2>
-
-<p>
-Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
-</p>
-
-<br>
-
-<h3>Terima Kasih</h3>
-
-<br>
-
-<h2>Asih & Fahril</h2>
 
 </section>
 
 <footer>
 
-© 2026 Wedding Invitation
+<h2>Terima Kasih</h2>
+
+<p>
+Merupakan suatu kehormatan dan kebahagiaan bagi kami
+apabila Bapak/Ibu/Saudara/i berkenan hadir.
+</p>
+
+<br>
+
+<h3>Asih & Fahril</h3>
 
 </footer>
 
@@ -407,66 +354,58 @@ Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
 
 function openInvitation(){
 
-document.getElementById("cover").style.display="none";
+document.getElementById('cover').style.opacity='0';
 
-document.getElementById("music").play();
+setTimeout(()=>{
+document.getElementById('cover').style.display='none';
+},1000);
+
+document.getElementById('music').play();
 
 }
 
-const params = new URLSearchParams(window.location.search);
+const urlParams=new URLSearchParams(window.location.search);
 
-const guest = params.get("to");
+const guest=urlParams.get('to');
 
 if(guest){
-
-document.getElementById("guestName").innerHTML = guest;
-
+document.getElementById('guestName').innerText=guest;
 }
 
-const weddingDate = new Date("Nov 14, 2026 09:00:00").getTime();
+const target=new Date("Nov 14, 2026 09:00:00").getTime();
 
-setInterval(function(){
+setInterval(()=>{
 
-const now = new Date().getTime();
+const now=new Date().getTime();
 
-const distance = weddingDate - now;
+const distance=target-now;
 
-document.getElementById("days").innerHTML =
-Math.floor(distance/(1000*60*60*24));
-
-document.getElementById("hours").innerHTML =
-Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-
-document.getElementById("minutes").innerHTML =
-Math.floor((distance%(1000*60*60))/(1000*60));
-
-document.getElementById("seconds").innerHTML =
-Math.floor((distance%(1000*60))/1000);
+document.getElementById("days").innerHTML=Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
 
 },1000);
 
-function createFlower(){
+const petals=document.getElementById('petals');
 
-const flower=document.createElement("div");
+for(let i=0;i<25;i++){
 
-flower.classList.add("flower");
+const p=document.createElement('div');
 
-flower.innerHTML="🌸";
+p.classList.add('petal');
 
-flower.style.left=Math.random()*100+"vw";
+p.innerHTML='✦';
 
-flower.style.animationDuration=
-(5+Math.random()*5)+"s";
+p.style.left=Math.random()*100+'%';
 
-document.body.appendChild(flower);
+p.style.animationDuration=(5+Math.random()*8)+'s';
 
-setTimeout(()=>{
-flower.remove();
-},10000);
+p.style.animationDelay=Math.random()*5+'s';
+
+petals.appendChild(p);
 
 }
-
-setInterval(createFlower,500);
 
 </script>
 
