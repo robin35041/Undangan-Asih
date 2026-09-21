@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="invitation-cover" id="invitationCover" role="dialog" aria-modal="true" aria-label="Sampul undangan">
+      <div class="cover-arch">
+        <p class="eyebrow">The Wedding Of</p>
+        <h1>Siti Asih <span>&amp;</span> Fahril</h1>
+        <p class="cover-date">Sabtu, 14 November 2026</p>
+        <button class="open-button" id="openInvitation" type="button">Buka Undangan <span>✦</span></button>
+      </div>
+    </div>
+    <audio id="weddingMusic" loop preload="auto">
+      <source src="leberch-wedding-piano-595793.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Matikan musik" aria-pressed="true">
+      <span aria-hidden="true">♫</span>
+    </button>
     <main>
       <section class="hero section-shell" id="beranda">
         <div class="batik batik-top"></div>
