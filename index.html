@@ -94,6 +94,28 @@
         </div>
       </section>
 
+      <section class="guestbook section-shell" id="buku-tamu">
+        <p class="eyebrow">Wedding Guestbook</p>
+        <h2>Buku Tamu</h2>
+        <p class="guestbook-intro">Kirim doa dan konfirmasi kehadiran Anda untuk kedua mempelai.</p>
+        <form class="guestbook-form" id="guestbookForm">
+          <label for="guestName">Nama Anda</label>
+          <input id="guestName" name="name" type="text" maxlength="50" autocomplete="name" placeholder="Masukkan nama" required />
+          <label for="attendance">Konfirmasi Kehadiran</label>
+          <select id="attendance" name="attendance" required>
+            <option value="hadir">InsyaAllah hadir</option>
+            <option value="tidak-hadir">Maaf, belum bisa hadir</option>
+          </select>
+          <label for="guestMessage">Ucapan &amp; Doa</label>
+          <textarea id="guestMessage" name="message" maxlength="500" rows="4" placeholder="Tulis ucapan terbaik Anda" required></textarea>
+          <button class="button" id="guestbookSubmit" type="submit">Kirim Ucapan <span>✦</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+        <div class="guestbook-list" id="guestbookList" aria-live="polite">
+          <p class="guestbook-loading">Memuat ucapan tamu...</p>
+        </div>
+      </section>
+
       <section class="closing section-shell">
         <div class="floral floral-bottom" aria-hidden="true">❀</div>
         <p class="copy">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
@@ -107,7 +129,8 @@
       <a href="#mempelai">♡<span>Mempelai</span></a>
       <a href="#acara">✦<span>Acara</span></a>
       <a href="#lokasi">⌖<span>Lokasi</span></a>
+      <a href="#buku-tamu">✎<span>Buku Tamu</span></a>
     </nav>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
