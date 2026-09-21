@@ -1,436 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Undangan Pernikahan Siti Asih &amp; Fahril</title>
-<meta name="description" content="Undangan pernikahan Siti Asih &amp; Fahril. Sabtu, 14 November 2026, Kp. Pisangan Pangsor, Desa Sangiang, Sepatan Timur, Kab. Tangerang.">
-<meta name="theme-color" content="#cbbde0">
-<meta property="og:title" content="Undangan Pernikahan Siti Asih &amp; Fahril">
-<meta property="og:description" content="Sabtu, 14 November 2026 · Kediaman Mempelai Wanita, Desa Sangiang, Sepatan Timur, Tangerang">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --lavender:#cbbde0;
-  --mist:#e6def0;
-  --plum:#4a3f5c;
-  --copper:#b5573a;
-  --ink:#1f1b26;
-  --paper:#fffdfb;
-  --script:"Monsieur La Doulaise","Snell Roundhand","Brush Script MT",cursive;
-  --sans:"Poppins","Segoe UI",system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:var(--sans);color:var(--ink);background:#b9a7d1;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-body.locked{overflow:hidden;height:100dvh}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4e183d" />
+    <meta name="description" content="Undangan pernikahan Siti Asih dan Fahril" />
+    <title>Undangan Pernikahan | Siti Asih & Fahril</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero section-shell" id="beranda">
+        <div class="batik batik-top"></div>
+        <div class="floral floral-left" aria-hidden="true">❀</div>
+        <div class="floral floral-right" aria-hidden="true">❀</div>
+        <p class="eyebrow">The Wedding Of</p>
+        <h1>Siti Asih <span>&amp;</span> Fahril</h1>
+        <div class="hero-divider"><span>✦</span></div>
+        <p class="date">Sabtu, 14 November 2026</p>
+        <a class="scroll-cue" href="#mempelai" aria-label="Lihat undangan">⌄</a>
+      </section>
 
-/* ---------- Panggung (lebar ponsel) ---------- */
-.stage{
-  position:fixed;top:0;bottom:0;left:50%;width:min(100vw,480px);transform:translateX(-50%);
-  overflow:hidden;pointer-events:none;
-}
-.stage svg{position:absolute;inset:0;width:100%;height:100%}
-.stage.back{z-index:0}
-.stage.front{z-index:3}
-@media(min-width:481px){
-  body{background:radial-gradient(circle at 50% 30%,#d8cce8,#a993c6 70%)}
-  .stage.back{box-shadow:0 0 60px rgba(60,40,90,.35)}
-}
+      <section class="opening section-shell" id="mempelai">
+        <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+        <p class="intro">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <p class="copy">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
+        <div class="ornament"><span>❧</span></div>
+        <article class="person">
+          <p class="role">Mempelai Wanita</p>
+          <h2>Siti Asih</h2>
+          <p>Putri Bungsu dari</p>
+          <p><strong>Bapak Karnawi (Awi)</strong><br />&amp;<br /><strong>Ibu Ramdah</strong></p>
+        </article>
+        <div class="and">&amp;</div>
+        <article class="person">
+          <p class="role">Mempelai Pria</p>
+          <h2>Fahril</h2>
+          <p>Putra Bungsu dari</p>
+          <p><strong>Bapak H. Udin Kantin (Alm)</strong><br />&amp;<br /><strong>Ibu Nuryanih</strong></p>
+        </article>
+      </section>
 
-/* ---------- Sampul ---------- */
-#cover{
-  position:fixed;top:0;bottom:0;left:50%;width:min(100vw,480px);transform:translateX(-50%);
-  z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:space-between;
-  padding:clamp(56px,11dvh,110px) 24px calc(28px + env(safe-area-inset-bottom));
-  text-align:center;transition:opacity .9s ease,transform 1.1s cubic-bezier(.7,0,.3,1);
-}
-#cover.gone{opacity:0;transform:translateX(-50%) translateY(-8%);pointer-events:none}
-.cover-title{font-family:var(--script);color:var(--copper);font-size:clamp(72px,22vw,104px);line-height:.85}
-.cover-title small{display:block;font-size:.62em;margin-top:.05em}
-.cover-names{margin-top:18px;font-weight:500;letter-spacing:.14em;font-size:13px;color:var(--plum)}
-.cover-date{margin-top:6px;font-size:12px;font-weight:300;color:var(--plum)}
-.guest{
-  width:100%;background:rgba(255,253,251,.9);border-radius:22px;padding:18px 18px 20px;
-  box-shadow:0 10px 30px rgba(50,30,80,.25);
-}
-.guest p{font-size:12px;font-weight:300}
-.guest strong{display:block;font-size:17px;font-weight:600;margin:4px 0 14px;word-break:break-word}
-.btn{
-  display:inline-block;border:0;cursor:pointer;text-decoration:none;font-family:var(--sans);
-  background:var(--copper);color:#fff;font-size:13px;font-weight:500;letter-spacing:.04em;
-  padding:12px 26px;border-radius:999px;transition:background .2s,transform .2s;
-}
-.btn:hover{background:#9c452b}
-.btn:active{transform:scale(.97)}
-.btn:focus-visible,.music:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
-.btn.ghost{background:transparent;color:var(--copper);border:1.5px solid var(--copper)}
-.btn.ghost:hover{background:var(--copper);color:#fff}
+      <section class="event-section section-shell" id="acara">
+        <p class="eyebrow">Save The Date</p>
+        <h2>Rangkaian Acara</h2>
+        <div class="event-cards">
+          <article class="event-card">
+            <div class="icon">✦</div>
+            <h3>Akad Nikah</h3>
+            <p class="event-date">Sabtu<br /><strong>14 November 2026</strong></p>
+            <p>10.00 WIB<br />s.d. Selesai</p>
+          </article>
+          <article class="event-card">
+            <div class="icon">❀</div>
+            <h3>Resepsi</h3>
+            <p class="event-date">Sabtu<br /><strong>14 November 2026</strong></p>
+            <p>09.00 WIB<br />s.d. Selesai</p>
+          </article>
+        </div>
+        <div class="countdown" aria-label="Hitung mundur menuju resepsi">
+          <div><b id="days">00</b><span>Hari</span></div>
+          <div><b id="hours">00</b><span>Jam</span></div>
+          <div><b id="minutes">00</b><span>Menit</span></div>
+          <div><b id="seconds">00</b><span>Detik</span></div>
+        </div>
+      </section>
 
-/* ---------- Isi ---------- */
-main{position:relative;z-index:2;width:min(100%,480px);margin:0 auto;transition:opacity .9s ease .3s}
-body.locked main{opacity:0;visibility:hidden}
-.arch{
-  width:min(88vw,410px);margin:9dvh auto 0;background:var(--paper);
-  border-radius:50% 50% 20px 20px / 200px 200px 20px 20px;
-  padding:130px 26px 56px;text-align:center;
-  box-shadow:0 18px 50px rgba(60,40,90,.22);
-}
-.ayat{font-style:italic;font-weight:300;font-size:12.5px;line-height:1.7;max-width:280px;margin:0 auto}
-.ref{font-size:12px;margin-top:10px}
-.salam{margin-top:30px;font-size:12.5px;font-weight:500}
-.lead{margin:8px auto 0;font-size:12px;font-weight:300;line-height:1.75;max-width:300px}
-.name{font-family:var(--script);color:var(--copper);font-size:clamp(58px,17vw,74px);line-height:1;margin-top:26px}
-.par{font-size:13px;line-height:1.65;margin-top:6px}
-.par span{display:block;font-weight:300;font-size:12px}
-.par b{font-weight:500}
-.amp{font-size:38px;color:var(--copper);margin-top:26px;line-height:1;font-weight:300}
-.sep{width:56px;height:2px;background:var(--copper);opacity:.55;margin:40px auto 0;border-radius:2px}
+      <section class="location section-shell" id="lokasi">
+        <p class="eyebrow">Tempat Acara</p>
+        <h2>Lokasi</h2>
+        <div class="address-card">
+          <div class="map-pin">⌖</div>
+          <h3>Kediaman Mempelai Wanita</h3>
+          <p>Kp. Pisangan Pangsor RT 02/03<br />Desa Sangiang<br />Kec. Sepatan Timur<br />Kab. Tangerang</p>
+          <a class="button" href="https://maps.app.goo.gl/n9aQ3E3HSSGz3oMX7" target="_blank" rel="noopener noreferrer">Buka Google Maps <span>↗</span></a>
+        </div>
+      </section>
 
-.event{margin-top:34px}
-.event h2{font-weight:400;font-size:21px;letter-spacing:.06em}
-.row{display:flex;justify-content:center;align-items:flex-start;gap:22px;margin-top:14px;text-align:left}
-.row .t{font-size:12.5px;font-weight:300;line-height:1.6;text-align:right}
-.row .t b{display:block;font-weight:500;font-size:13px}
-.row .d{font-size:12.5px;line-height:1.5;font-weight:300}
-.row .d b{font-weight:600;font-size:14px}
-.row .d i{display:block;font-style:normal}
-.vr{width:1.5px;align-self:stretch;background:var(--copper);opacity:.5}
-
-.place{margin-top:42px}
-.place h2{font-weight:400;font-size:21px;letter-spacing:.06em}
-.place .venue{margin-top:12px;font-weight:600;font-size:14px}
-.place address{font-style:normal;font-size:12.5px;font-weight:300;line-height:1.7;margin:6px 0 18px}
-
-.count{margin-top:42px}
-.count p{font-size:12px;font-weight:300;margin-bottom:12px}
-.cd{display:flex;justify-content:center;gap:10px}
-.cd div{min-width:62px;padding:10px 4px 8px;border:1.5px solid rgba(181,87,58,.55);border-radius:14px}
-.cd b{display:block;font-size:22px;font-weight:500;color:var(--plum);font-variant-numeric:tabular-nums}
-.cd span{font-size:10.5px;font-weight:300}
-.cal{margin-top:24px}
-
-.closing{margin-top:44px;font-size:12px;font-weight:300;line-height:1.8}
-.closing .wa{font-weight:500;margin-top:14px;font-size:12.5px}
-.family{margin-top:22px;font-size:12px;font-weight:300}
-.family b{display:block;font-family:var(--script);font-weight:400;color:var(--copper);font-size:44px;line-height:1.05;margin-top:2px}
-
-.thanks{min-height:100dvh;text-align:center;padding:12dvh 24px 0}
-.thanks h2{font-family:var(--script);font-weight:400;color:var(--copper);font-size:clamp(76px,23vw,110px);line-height:.85}
-.thanks h2 span{display:block;color:var(--plum);font-size:.62em}
-.thanks p{margin-top:16px;font-size:12px;font-weight:300;color:var(--plum)}
-
-.music{
-  position:fixed;right:max(14px,calc(50% - 226px));bottom:calc(16px + env(safe-area-inset-bottom));z-index:7;
-  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
-  background:var(--copper);color:#fff;font-size:18px;box-shadow:0 6px 18px rgba(50,30,80,.35);
-  display:none;place-items:center;
-}
-.music.show{display:grid}
-.music.spin svg{animation:spin 4s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){
-  #cover{transition:opacity .2s}
-  .music.spin svg{animation:none}
-}
-</style>
-</head>
-<body class="locked">
-
-<!-- Latar ilustrasi -->
-<div class="stage back" aria-hidden="true">
-  <svg id="scene" viewBox="0 0 480 854" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#cdbfe1"/><stop offset=".55" stop-color="#e5ddf0"/><stop offset="1" stop-color="#c3b1dc"/>
-      </linearGradient>
-      <linearGradient id="fall" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff" stop-opacity=".85"/>
-        <stop offset=".8" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-      </linearGradient>
-      <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#b9a7d6"/><stop offset="1" stop-color="#9a84c0"/>
-      </linearGradient>
-      <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
-    </defs>
-    <rect width="480" height="854" fill="url(#sky)"/>
-    <!-- bukit jauh -->
-    <path d="M0 430 Q70 350 150 410 T300 400 T480 420 V700 H0Z" fill="#a89db9" opacity=".55"/>
-    <path d="M0 470 Q120 400 230 460 T480 455 V700 H0Z" fill="#8e86a3" opacity=".5"/>
-    <!-- air terjun -->
-    <g filter="url(#soft)" opacity=".95">
-      <rect x="150" y="0" width="34" height="470" fill="url(#fall)"/>
-      <rect x="196" y="0" width="60" height="480" fill="url(#fall)"/>
-      <rect x="270" y="0" width="40" height="470" fill="url(#fall)"/>
-      <rect x="110" y="330" width="240" height="150" rx="70" fill="#fff" opacity=".65"/>
-    </g>
-    <rect y="620" width="480" height="240" fill="url(#ground)"/>
-    <g id="canopy"></g>
-    <g id="house"></g>
-    <g id="penjor"></g>
-    <g id="ornaments"></g>
-  </svg>
-</div>
-
-<!-- Bunga latar depan -->
-<div class="stage front" aria-hidden="true">
-  <svg id="fore" viewBox="0 0 480 854" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"></svg>
-</div>
-
-<!-- Sampul -->
-<section id="cover" aria-label="Sampul undangan">
-  <div>
-    <h1 class="cover-title">Undangan<small>Pernikahan</small></h1>
-    <p class="cover-names">SITI ASIH &amp; FAHRIL</p>
-    <p class="cover-date">Sabtu, 14 November 2026</p>
-  </div>
-  <div class="guest">
-    <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-    <strong id="guestName">Tamu Undangan</strong>
-    <button class="btn" id="openBtn" type="button">Buka Undangan</button>
-  </div>
-</section>
-
-<!-- Isi undangan -->
-<main id="isi" aria-label="Isi undangan">
-  <article class="arch">
-    <p class="ayat">Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)</p>
-    <p class="ref">QS. Az-Zariyat 49</p>
-
-    <p class="salam">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
-    <p class="lead">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
-
-    <h2 class="name">Siti Asih</h2>
-    <p class="par"><span>Putri Bungsu dari</span><b>Bapak Karnawi (Awi)</b><br>&amp; <b>Ibu Ramdah</b></p>
-
-    <p class="amp">&amp;</p>
-
-    <h2 class="name">Fahril</h2>
-    <p class="par"><span>Putra Bungsu dari</span><b>Bapak H. Udin Kantin (Alm)</b><br>&amp; <b>Ibu Nuryanih</b></p>
-
-    <div class="sep"></div>
-
-    <section class="event">
-      <h2>AKAD NIKAH</h2>
-      <div class="row">
-        <div class="t"><b>10.00 WIB</b>s.d. Selesai</div>
-        <div class="vr"></div>
-        <div class="d"><i>Sabtu</i><b>14 November 2026</b></div>
-      </div>
-    </section>
-
-    <section class="event">
-      <h2>RESEPSI</h2>
-      <div class="row">
-        <div class="t"><b>09.00 WIB</b>&nbsp;</div>
-        <div class="vr"></div>
-        <div class="d"><i>Sabtu</i><b>14 November 2026</b></div>
-      </div>
-    </section>
-
-    <section class="place">
-      <h2>LOKASI</h2>
-      <p class="venue">Kediaman Mempelai Wanita</p>
-      <address>Kp. Pisangan Pangsor RT 02/03<br>Desa Sangiang, Kec. Sepatan Timur<br>Kab. Tangerang</address>
-      <a class="btn" href="https://maps.app.goo.gl/n9aQ3E3HSSGz3oMX7" target="_blank" rel="noopener">Buka Google Maps</a>
-    </section>
-
-    <section class="count" aria-label="Hitung mundur">
-      <p>Menuju hari bahagia</p>
-      <div class="cd" id="cd">
-        <div><b id="cdD">0</b><span>Hari</span></div>
-        <div><b id="cdH">0</b><span>Jam</span></div>
-        <div><b id="cdM">0</b><span>Menit</span></div>
-        <div><b id="cdS">0</b><span>Detik</span></div>
-      </div>
-      <a class="btn ghost cal" id="calBtn" target="_blank" rel="noopener" href="#">Simpan ke Kalender</a>
-    </section>
-
-    <section class="closing">
-      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
-      <p class="wa">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
-      <p class="family">Kami yang berbahagia<b>Siti Asih &amp; Fahril</b>beserta keluarga</p>
-    </section>
-  </article>
-
-  <section class="thanks">
-    <h2>Terima<span>Kasih</span></h2>
-    <p>Siti Asih &amp; Fahril</p>
-  </section>
-</main>
-
-<!-- Musik latar (opsional): taruh berkas musik.mp3 di folder yang sama -->
-<audio id="bgm" src="musik.mp3" loop preload="metadata"></audio>
-<button class="music" id="musicBtn" type="button" aria-label="Putar atau jeda musik">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3v11.3A3.5 3.5 0 1 0 11 17.5V7.6l8-1.8v6.5A3.5 3.5 0 1 0 21 15.5V2z"/></svg>
-</button>
-
-<script>
-(function(){
-  /* ===== Nama tamu dari tautan: ?to=Nama+Tamu ===== */
-  var q = new URLSearchParams(location.search).get('to');
-  if(q){ document.getElementById('guestName').textContent = q.replace(/\s+/g,' ').trim().slice(0,60); }
-
-  /* ===== Ilustrasi ===== */
-  var NS='http://www.w3.org/2000/svg';
-  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-  var R=rng(20261114);
-  function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
-  function pick(a){return a[Math.floor(R()*a.length)]}
-  function rand(a,b){return a+R()*(b-a)}
-  function blob(g,cx,cy,rx,ry,n,cols,rmin,rmax){
-    for(var i=0;i<n;i++){
-      var a=R()*6.283,d=Math.sqrt(R());
-      el('circle',{cx:cx+Math.cos(a)*rx*d,cy:cy+Math.sin(a)*ry*d,r:rand(rmin,rmax),fill:pick(cols),opacity:rand(.75,1)},g);
-    }
-  }
-
-  // pohon & kanopi
-  var canopy=document.getElementById('canopy');
-  el('path',{d:'M392 120 C 386 260 396 400 384 640 L 420 640 C 412 420 420 260 416 120Z',fill:'#3d334d'},canopy);
-  var dark=['#3f3550','#4a3f5c','#5b4d70','#6d5e84'];
-  blob(canopy,410,110,120,120,150,dark,10,26);
-  blob(canopy,400,230,80,90,80,dark,9,20);
-  blob(canopy,410,110,110,110,70,['#9b8db4','#b3a6c9','#8a7ba6'],2,5);
-  blob(canopy,10,170,70,140,70,dark,9,22);
-  blob(canopy,14,170,60,120,40,['#9b8db4','#b3a6c9'],2,4);
-
-  // rumah joglo
-  var h=document.getElementById('house');
-  el('rect',{x:78,y:566,width:324,height:96,fill:'#c99b62'},h);
-  el('rect',{x:70,y:556,width:340,height:14,fill:'#7a4a25'},h);
-  for(var i=0;i<6;i++){
-    var x=92+i*52;
-    el('rect',{x:x,y:580,width:40,height:78,rx:3,fill:'#a9773f',stroke:'#7a4a25','stroke-width':2},h);
-    el('path',{d:'M'+(x+8)+' 600 h24 M'+(x+8)+' 616 h24 M'+(x+8)+' 632 h24',stroke:'#6b3f1e','stroke-width':1.5,opacity:.7},h);
-  }
-  el('rect',{x:230,y:590,width:20,height:70,fill:'#5c3418'},h);
-  // atap bertingkat
-  var roof='#c4502d',roofDark='#9f3a20';
-  function tier(pts){el('polygon',{points:pts,fill:roof},h)}
-  tier('52,560 428,560 372,492 108,492');
-  tier('124,494 356,494 306,432 174,432');
-  tier('186,434 294,434 262,392 218,392');
-  el('rect',{x:222,y:384,width:36,height:12,rx:4,fill:roofDark},h);
-  for(var j=0;j<24;j++){var xx=64+j*15.4;el('line',{x1:xx,y1:558,x2:xx*.82+43,y2:494,stroke:roofDark,'stroke-width':1,opacity:.55},h)}
-  for(var k=0;k<14;k++){var x2=132+k*16.5;el('line',{x1:x2,y1:492,x2:x2*.78+52,y2:434,stroke:roofDark,'stroke-width':1,opacity:.5},h)}
-  el('path',{d:'M52 560H428',stroke:roofDark,'stroke-width':4},h);
-
-  // penjor merah muda
-  var p=document.getElementById('penjor');
-  el('path',{d:'M52 700 C 46 520 36 340 64 262 C 84 210 138 196 170 244',fill:'none',stroke:'#f0a9b8','stroke-width':8,'stroke-linecap':'round'},p);
-  el('path',{d:'M64 262 C 84 210 138 196 170 244',fill:'none',stroke:'#f8c9d3','stroke-width':3,'stroke-linecap':'round'},p);
-  for(var m=0;m<9;m++){
-    var tx=90+m*10,ty=228+Math.sin(m*.5)*8;
-    el('line',{x1:tx,y1:ty,x2:tx,y2:ty+50+(m%3)*22,stroke:'#f0a9b8','stroke-width':2},p);
-    el('circle',{cx:tx,cy:ty+54+(m%3)*22,r:5,fill:'#f7bccb'},p);
-  }
-  for(var n=0;n<14;n++){el('circle',{cx:56-(n%2)*4+R()*4,cy:300+n*28,r:6,fill:n%2?'#f7bccb':'#efa0b2'},p)}
-  // penjor kedua (lentera)
-  el('path',{d:'M292 240 C 300 200 340 196 352 236',fill:'none',stroke:'#f0a9b8','stroke-width':6,'stroke-linecap':'round'},p);
-  for(var l=0;l<6;l++){el('line',{x1:302+l*9,y1:214+Math.abs(l-2.5)*3,x2:302+l*9,y2:270+(l%2)*18,stroke:'#f0a9b8','stroke-width':2},p);el('circle',{cx:302+l*9,cy:274+(l%2)*18,r:4.5,fill:'#f7bccb'},p)}
-
-  // ornamen gunungan ungu
-  var o=document.getElementById('ornaments');
-  function gunungan(x,y,s){
-    var g=el('g',{transform:'translate('+x+','+y+') scale('+s+')'},o);
-    var d='M0 -130 C 38 -80 62 -28 48 34 C 38 82 -38 82 -48 34 C -62 -28 -38 -80 0 -130Z';
-    el('path',{d:d,fill:'#9a7cc4',stroke:'#7a5aa6','stroke-width':3},g);
-    el('path',{d:d,fill:'#b79be0',transform:'scale(.72) translate(0,10)'},g);
-    el('path',{d:'M0 -60 C 16 -30 22 0 10 30 M0 -60 C -16 -30 -22 0 -10 30',fill:'none',stroke:'#7a5aa6','stroke-width':2.5},g);
-    el('ellipse',{cx:-22,cy:20,rx:9,ry:20,fill:'#a9dfca',transform:'rotate(18 -22 20)'},g);
-    el('ellipse',{cx:22,cy:20,rx:9,ry:20,fill:'#a9dfca',transform:'rotate(-18 22 20)'},g);
-    el('circle',{cx:0,cy:-20,r:7,fill:'#f1d98b'},g);
-  }
-  gunungan(214,690,1.02);
-  gunungan(66,712,.72);
-
-  /* ===== Bunga depan ===== */
-  var f=el('g',{transform:'translate(0,34)'},document.getElementById('fore'));
-  var blues=['#8b98e6','#a4a9ee','#7d86d6','#9aa4ef','#b7b8f3'];
-  function bloom(g,x,y,r){
-    var w=el('g',{transform:'translate('+x+','+y+') rotate('+(R()*72)+')'},g);
-    for(var i=0;i<5;i++){el('ellipse',{cx:0,cy:-r*.62,rx:r*.42,ry:r*.66,fill:'#fffaf0',stroke:'#e4d9bd','stroke-width':.8,transform:'rotate('+(i*72)+')'},w)}
-    el('circle',{r:r*.2,fill:'#eac768'},w);
-  }
-  function palm(g,bx,by,side){
-    for(var i=0;i<8;i++){
-      var ang=(-100+i*(side>0?-12:12))*Math.PI/180+ (side>0?-.2:.2), len=rand(90,150);
-      var tx=bx+Math.cos(ang)*len*side*-1*-1, ty=by+Math.sin(ang)*len;
-      var cx=bx+(tx-bx)*.5+side*-18, cy=by+(ty-by)*.5-24;
-      el('path',{d:'M'+bx+' '+by+' Q'+(cx+6)+' '+(cy-8)+' '+tx+' '+ty+' Q'+(cx-8)+' '+(cy+10)+' '+bx+' '+by,fill:'#1e1927'},g);
-    }
-  }
-  // dasar biru bertumpuk
-  var base=el('g',{},f);
-  el('rect',{x:0,y:790,width:480,height:70,fill:'#8f9be0'},base);
-  for(var b=0;b<520;b++){
-    var yy=rand(700,854),xx=R()*480;
-    var lift=(yy-700)/154;
-    if(R()>.35+lift*.5)continue;
-    el('circle',{cx:xx,cy:yy,r:rand(3.5,8),fill:pick(blues)},base);
-  }
-  // rumpun kiri
-  var L=el('g',{},f);
-  palm(L,26,780,1);
-  blob(L,90,770,110,46,60,['#b9d6c2','#9cc7b0'],6,12);
-  [[36,760,22],[86,738,26],[136,770,20],[62,790,24],[112,796,22],[16,808,18],[160,808,20]].forEach(function(a){bloom(L,a[0],a[1],a[2])});
-  blob(L,70,790,80,30,18,['#8564b3','#a682d0'],5,9);
-  // rumpun kanan
-  var Rr=el('g',{},f);
-  palm(Rr,452,790,-1);
-  blob(Rr,392,776,100,40,50,['#b9d6c2','#9cc7b0'],6,12);
-  [[430,770,22],[380,748,26],[336,782,22],[404,800,24],[350,812,20],[462,808,18],[300,820,18]].forEach(function(a){bloom(Rr,a[0],a[1],a[2])});
-  blob(Rr,384,798,80,30,18,['#8564b3','#a682d0'],5,9);
-  // tepi bunga di tengah bawah
-  for(var c=0;c<40;c++){el('circle',{cx:150+R()*180,cy:rand(818,854),r:rand(4,8),fill:pick(blues)},base)}
-  [[220,826,17],[270,832,15]].forEach(function(a){bloom(base,a[0],a[1],a[2])});
-
-  /* ===== Buka undangan ===== */
-  var cover=document.getElementById('cover'),
-      audio=document.getElementById('bgm'),
-      mbtn=document.getElementById('musicBtn');
-  audio.addEventListener('loadedmetadata',function(){mbtn.classList.add('show')});
-  audio.addEventListener('error',function(){mbtn.classList.remove('show')});
-  document.getElementById('openBtn').addEventListener('click',function(){
-    cover.classList.add('gone');
-    document.body.classList.remove('locked');
-    window.scrollTo(0,0);
-    var pr=audio.play();
-    if(pr&&pr.then){pr.then(function(){mbtn.classList.add('spin')}).catch(function(){})}
-    setTimeout(function(){cover.style.display='none'},1200);
-  });
-  mbtn.addEventListener('click',function(){
-    if(audio.paused){audio.play();mbtn.classList.add('spin')}
-    else{audio.pause();mbtn.classList.remove('spin')}
-  });
-
-  /* ===== Hitung mundur (09.00 WIB, 14 November 2026) ===== */
-  var target=new Date('2026-11-14T09:00:00+07:00').getTime();
-  var dE=document.getElementById('cdD'),hE=document.getElementById('cdH'),
-      mE=document.getElementById('cdM'),sE=document.getElementById('cdS');
-  function tick(){
-    var diff=Math.max(0,target-Date.now());
-    dE.textContent=Math.floor(diff/864e5);
-    hE.textContent=Math.floor(diff%864e5/36e5);
-    mE.textContent=Math.floor(diff%36e5/6e4);
-    sE.textContent=Math.floor(diff%6e4/1e3);
-  }
-  tick();setInterval(tick,1000);
-
-  /* ===== Simpan ke kalender ===== */
-  var calUrl='https://calendar.google.com/calendar/render?action=TEMPLATE'
-    +'&text='+encodeURIComponent('Pernikahan Siti Asih & Fahril')
-    +'&dates=20261114T090000/20261114T140000&ctz=Asia/Jakarta'
-    +'&details='+encodeURIComponent('Resepsi 09.00 WIB. Akad Nikah 10.00 WIB s.d. selesai.\nPeta: https://maps.app.goo.gl/n9aQ3E3HSSGz3oMX7')
-    +'&location='+encodeURIComponent('Kp. Pisangan Pangsor RT 02/03, Desa Sangiang, Kec. Sepatan Timur, Kab. Tangerang');
-  document.getElementById('calBtn').href=calUrl;
-})();
-</script>
-</body>
+      <section class="closing section-shell">
+        <div class="floral floral-bottom" aria-hidden="true">❀</div>
+        <p class="copy">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+        <p class="thanks">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <p class="eyebrow">Kami yang berbahagia</p>
+        <h2>Siti Asih <span>&amp;</span> Fahril</h2>
+      </section>
+    </main>
+    <nav class="bottom-nav" aria-label="Navigasi undangan">
+      <a href="#beranda">⌂<span>Beranda</span></a>
+      <a href="#mempelai">♡<span>Mempelai</span></a>
+      <a href="#acara">✦<span>Acara</span></a>
+      <a href="#lokasi">⌖<span>Lokasi</span></a>
+    </nav>
+    <script src="script.js"></script>
+  </body>
 </html>
