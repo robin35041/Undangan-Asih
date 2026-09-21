@@ -136,3 +136,15 @@ function initializeGuestbook() {
 }
 
 initializeGuestbook();
+
+const revealSections = document.querySelectorAll("main section:not(.hero)");
+revealSections.forEach((section) => section.classList.add("reveal-section"));
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-revealed");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealSections.forEach((section) => revealObserver.observe(section));
